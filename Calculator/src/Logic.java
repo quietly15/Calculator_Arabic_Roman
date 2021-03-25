@@ -83,8 +83,6 @@ class Parsing {
 
     public static void Calculate (String s) throws Exception {
 
-        s = ConvertingValues.clearSpaces(s);
-
         if (Character.isDigit(s.toCharArray()[0])) {
             boolean a = Validation.isCorrectArabic(s);
             if (!a) throw new Exception("Invalid input.");
@@ -100,7 +98,7 @@ class Parsing {
                 case '*' -> res = LogicArabic.mul.operation(values[0], values[1]);
             }
 
-            System.out.printf(" = %d", res);
+            System.out.printf("%d %s %d = %d", values[0], operation, values[1], res);
         }
 
         else if (Character.isLetter(s.toCharArray()[0])) {
@@ -118,7 +116,7 @@ class Parsing {
                 case '*' -> res.append(LogicRoman.mul.operation(values[0], values[1]));
             }
 
-            System.out.print(" = " + res.toString());
+            System.out.printf("%s %s %s = %s", values[0], operation, values[1], res);
         }
     }
 }
