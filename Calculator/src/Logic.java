@@ -65,7 +65,7 @@ class Parsing {
             right.append(sToChr[i]);
         }
 
-        return new String[]{left.toString(), right.toString()};
+        return new String[]{left.toString(), right.reverse().toString()};
     }
 
     public static char getTypeOfOperation (String s) {
