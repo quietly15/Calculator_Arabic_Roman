@@ -42,11 +42,6 @@ public class ConvertingValues {
     }
 
     public static String clearSpaces (String s) {
-        StringBuilder res = new StringBuilder();
-        char[] valToChr = s.toCharArray();
-
-        for (char i: valToChr) { if (i != ' ') res.append(i); }
-
-        return res.toString();
+        return s.replace(" ", ""); 
     }
 }
